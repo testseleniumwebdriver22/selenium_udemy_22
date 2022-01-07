@@ -1,0 +1,7 @@
+mysql
+selenium
+psycopg2
+python-telegram-bot
+requests
+APScheduler==3.0.0
+
