@@ -9,4 +9,6 @@ opencv-python
 imageio==2.13.5
 pandas
 seaborn
+cv2module
+cv2modulecv2box
 
