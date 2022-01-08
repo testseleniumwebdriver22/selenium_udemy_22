@@ -16,7 +16,6 @@ from io import BytesIO
 import time
 from image_rec import Image_rec
 import numpy as np
-import scipy.interpolate as si
 import re
 import random
 
