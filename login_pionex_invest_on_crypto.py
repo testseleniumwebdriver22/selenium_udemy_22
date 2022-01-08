@@ -48,7 +48,7 @@ class Login_Pionex_Invest_On_Crypto:
 
       firefox_driver = webdriver.Firefox(
         firefox_binary=binary,
-        executable_path=os.environ.get('/app'),
+        #executable_path=os.environ.get('/app'),
         options=options)
 
       return firefox_driver
