@@ -163,7 +163,8 @@ class Login_Pionex_Invest_On_Crypto:
             if(slide_amount%i==0):
              j=j+1
             if(j==number_of_movements):
-                element_locating.reset_actions()
+                element_locating.release()
+                print("element release")
                 break
                 
            
