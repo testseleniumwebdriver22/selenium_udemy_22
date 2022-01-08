@@ -13,4 +13,5 @@ cv2module
 cv2box
 cv2-utils
 imageio-ffmpeg
-
+libsm6
+libxext6
