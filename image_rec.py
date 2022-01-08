@@ -5,9 +5,6 @@ Created on Fri Dec 24 13:24:13 2021
 @author: luca
 """
 
-import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 import os, random
 import cv2
 import numpy as np
