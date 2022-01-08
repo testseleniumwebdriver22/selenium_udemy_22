@@ -4,4 +4,7 @@ psycopg2
 python-telegram-bot
 requests
 APScheduler==3.0.0
+numpy
+opencv-python==2.4.9
+imageio==2.13.5
 
