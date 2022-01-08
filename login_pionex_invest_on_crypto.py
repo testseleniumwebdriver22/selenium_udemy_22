@@ -44,7 +44,7 @@ class Login_Pionex_Invest_On_Crypto:
       options.add_argument("-disable-gpu")
       options.add_argument("-no-sandbox")
 
-      binary = os.environ.get('FIREFOX_BIN')
+      binary = FirefoxBinary(os.environ.get('FIREFOX_BIN'))
 
       firefox_driver = webdriver.Firefox(
         firefox_binary=binary,
