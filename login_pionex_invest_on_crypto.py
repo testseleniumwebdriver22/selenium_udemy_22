@@ -23,13 +23,20 @@ import random
 class Login_Pionex_Invest_On_Crypto:
 
   def __init__(self,crypto_name_to_invest,amount_to_invest):              
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
+    DATABASE_URI = os.environ.get("DATABASE_URL")
     
     site="https://www.pionex.com/en-US/sign"
     self.delay=30
     self.crypto_name_to_invest=crypto_name_to_invest
     self.amount_to_invest=amount_to_invest
     
-    self.driver = webdriver.Firefox()
+    self.driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options)
     self.driver.get(site)
         
     
