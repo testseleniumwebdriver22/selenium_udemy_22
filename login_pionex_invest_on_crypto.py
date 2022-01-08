@@ -179,7 +179,7 @@ class Login_Pionex_Invest_On_Crypto:
                   
                   
                   try:
-                               myElem = WebDriverWait(self.driver, 1).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
+                               myElem = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
                               
                   except TimeoutException:
                                print ("slider movement not correct, retrying with different values..")
