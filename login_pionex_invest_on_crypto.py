@@ -167,8 +167,8 @@ class Login_Pionex_Invest_On_Crypto:
         if slide_amount-self.current_slider_pos<i:
                   
                   self.update_cursor_position()
-                  element2=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_slider_button')]")
-                  webdriver.ActionChains(self.driver).move_to_element(element2).click_and_hold().move_by_offset(int(slide_amount)-self.current_slider_pos+correction, 10).release().perform()
+                  #element2=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_slider_button')]")
+                  webdriver.ActionChains(self.driver).move_to_element(element).click_and_hold().move_by_offset(int(slide_amount)-self.current_slider_pos+correction, 10).release().perform()
                                 
                   print("slide_amount-self.current_slider_pos= "+str(type(slide_amount-self.current_slider_pos)))
                                     
