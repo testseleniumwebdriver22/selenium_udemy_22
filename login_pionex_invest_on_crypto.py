@@ -193,20 +193,22 @@ class Login_Pionex_Invest_On_Crypto:
 
     class_name="ant-modal-confirm-content"
     
-    
-    try:
-                 myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
-                 print ("Login success!")
-                 self.Invest_on_crypto()
+    time.sleep(4)
+    self.driver.find_element_by_xpath("//*[contains(@class,'ant-btn')]")
+    print("cancel button clicked")
+    # try:
+    #              myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
+    #              print ("Login success!")
+    #              self.Invest_on_crypto()
             
                 
-    except TimeoutException:
-                 print ("Login not success, retrying..")
-                 #self.driver.find_element_by_xpath("//*[contains(@class,'geetest_refresh_1')]").click()
-                 #self.attempt_login()
-                 self.driver.close()
-                 login_pionex2=Login_Pionex_Invest_On_Crypto(self.crypto_name_to_invest,self.amount_to_invest)
-                 login_pionex2.attempt_login()
+    # except TimeoutException:
+    #              print ("Login not success, retrying..")
+    #              #self.driver.find_element_by_xpath("//*[contains(@class,'geetest_refresh_1')]").click()
+    #              #self.attempt_login()
+    #              self.driver.close()
+    #              login_pionex2=Login_Pionex_Invest_On_Crypto(self.crypto_name_to_invest,self.amount_to_invest)
+    #              login_pionex2.attempt_login()
 
   def driver_close(self):
     self.driver.close()               
