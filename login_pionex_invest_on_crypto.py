@@ -56,7 +56,7 @@ class Login_Pionex_Invest_On_Crypto:
     
     site="https://www.pionex.com/en-US/sign"
     self.driver = load_driver()
-	   self.driver.get(site)
+	  self.driver.get(site)
     
     self.delay=30
     
