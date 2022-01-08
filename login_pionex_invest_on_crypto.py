@@ -193,8 +193,8 @@ class Login_Pionex_Invest_On_Crypto:
 
     class_name="ant-modal-confirm-content"
     
-    time.sleep(4)
-    self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]")
+    time.sleep(10)
+    self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]").click()
     print("cancel button clicked")
     # try:
     #              myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
