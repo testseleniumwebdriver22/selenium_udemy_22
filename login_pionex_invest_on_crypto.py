@@ -25,46 +25,46 @@ import os
 class Login_Pionex_Invest_On_Crypto:
 
   def __init__(self,crypto_name_to_invest,amount_to_invest):              
-    # chrome_options = webdriver.ChromeOptions()
-    # chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-    # chrome_options.add_argument("--headless")
-    # chrome_options.add_argument("--disable-dev-shm-usage")
-    # chrome_options.add_argument("--no-sandbox")
-    # CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
-    # DATABASE_URI = os.environ.get("DATABASE_URL")
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
+    DATABASE_URI = os.environ.get("DATABASE_URL")
 
-    def load_driver():
-      options = webdriver.FirefoxOptions()
+    # def load_driver():
+    #   options = webdriver.FirefoxOptions()
       
-      # enable trace level for debugging 
-      #options.log.level = "trace"
+    #   # enable trace level for debugging 
+    #   #options.log.level = "trace"
 
-      #options.add_argument("-remote-debugging-port=9224")
-      options.add_argument("-headless")
-      #options.add_argument("-disable-gpu")
-      #options.add_argument("-no-sandbox")
+    #   #options.add_argument("-remote-debugging-port=9224")
+    #   options.add_argument("-headless")
+    #   #options.add_argument("-disable-gpu")
+    #   #options.add_argument("-no-sandbox")
 
-      binary = FirefoxBinary(os.environ.get('FIREFOX_BIN'))
+    #   binary = FirefoxBinary(os.environ.get('FIREFOX_BIN'))
 
-      firefox_driver = webdriver.Firefox(
-        firefox_binary=binary,
-        executable_path=os.environ.get('GECKODRIVER_PATH'),
-        options=options)
+    #   firefox_driver = webdriver.Firefox(
+    #     firefox_binary=binary,
+    #     executable_path=os.environ.get('GECKODRIVER_PATH'),
+    #     options=options)
 
-      return firefox_driver
+    #   return firefox_driver
     
     
     site="https://www.pionex.com/en-US/sign"
-    self.driver = load_driver()
-    self.driver.get(site)
+    # self.driver = load_driver()
+    # self.driver.get(site)
     
     self.delay=30
     
     self.crypto_name_to_invest=crypto_name_to_invest
     self.amount_to_invest=amount_to_invest
     
-    #self.driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options)
-    #self.driver.get(site)
+    self.driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, options=chrome_options)
+    self.driver.get(site)
         
     
     self.driver.find_element_by_xpath("//*[contains(@class,'inputContainer___88mru')]//input[@placeholder='Phone number / Email']").send_keys("testseleniumwebdriver22@gmail.com")
