@@ -164,6 +164,7 @@ class Login_Pionex_Invest_On_Crypto:
              j=j+1
             if(j==number_of_movements):
                 element_locating.reset_actions()
+                break
                 
            
         
