@@ -8,4 +8,5 @@ numpy
 opencv-python
 imageio==2.13.5
 pandas
+seaborn
 
