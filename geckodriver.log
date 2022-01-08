@@ -145,3 +145,25 @@ DevTools listening on ws://localhost:65010/devtools/browser/feb88ff2-9ee0-4fe9-a
 1641663662725	Marionette	INFO	Listening on port 65023
 1641663663047	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript warning: https://static.geetest.com/static/js/fullpage.9.0.8.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1641663706527	Marionette	INFO	Stopped listening on port 65023
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1641663716888	geckodriver	INFO	Listening on 127.0.0.1:65130
+1641663719986	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65131" "-no-remote" "-profile" "C:\\Users\\luca\\AppData\\Local\\Temp\\rust_mozprofilel2G44B"
+1641663720352	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\luca\\AppData\\Local\\Temp\\rust_mozprofilel2G44B\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:65131/devtools/browser/a7bc3662-9444-42c3-a3a2-4c8dfe8222f8
+1641663722965	Marionette	INFO	Listening on port 65137
+1641663723188	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://static.geetest.com/static/js/fullpage.9.0.8.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1641663756892	Marionette	INFO	Stopped listening on port 65137
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
