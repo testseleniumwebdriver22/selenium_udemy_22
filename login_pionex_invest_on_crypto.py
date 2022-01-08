@@ -183,7 +183,9 @@ class Login_Pionex_Invest_On_Crypto:
     self.driver.close()               
 
   
-    
+login_pionex=Login_Pionex_Invest_On_Crypto(crypto_name,22)
+login_pionex.attempt_login()
+login_pionex.driver_close()
     
 
 
