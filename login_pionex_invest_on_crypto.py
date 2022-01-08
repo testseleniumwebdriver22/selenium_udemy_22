@@ -93,6 +93,7 @@ class Login_Pionex_Invest_On_Crypto:
   def Invest_on_crypto(self):
     time.sleep(5)
     self.driver.find_element_by_xpath("//*[contains( text(), 'Market')]").click()
+    print("investment phase is beginning....")
     time.sleep(2)
     self.driver.execute_script("document.getElementsByClassName('table-container___8a_Yd')[0].style.height='16850px';") 
     self.driver.find_element_by_xpath("//*[contains(@class,'tableRow___w5YrW ')]//*[contains( text(), '"+self.crypto_name_to_invest+"')]").click() 
@@ -103,6 +104,7 @@ class Login_Pionex_Invest_On_Crypto:
     
     self.driver.find_element_by_xpath("//*[contains(@class,'ant-input-number-input-wrap')]//input").send_keys(str(self.amount_to_invest)) 
     self.driver.find_element_by_xpath("//*[contains(@class,'button-trading-up pionex-trading-up-bg')]").click() 
+    print("invested on crypto "+self.crypto_name_to_invest+"!!!!")
 
   def attempt_login(self):  
     
