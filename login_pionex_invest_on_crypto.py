@@ -58,7 +58,7 @@ class Login_Pionex_Invest_On_Crypto:
     self.driver = load_driver()
     self.driver.get(site)
     
-    self.delay=30
+    self.delay=20
     
     self.crypto_name_to_invest=crypto_name_to_invest
     self.amount_to_invest=amount_to_invest
@@ -179,16 +179,7 @@ class Login_Pionex_Invest_On_Crypto:
                   
                   class_name="tradeContainer___22DCk"
                   
-                  
-                  try:
-                               myElem = WebDriverWait(self.driver, 3).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
-                              
-                  except TimeoutException:
-                               print ("slider movement not correct, retrying with different values..")
-                               self.delay=50
-                               correction=9+correction
-                               slider_movement(correction)
-                  
+                   
                   
         
         time.sleep(random.uniform(1.534,2.3423))

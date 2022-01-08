@@ -22,3 +22,8 @@ DevTools listening on ws://localhost:53043/devtools/browser/8d356d59-d1e9-42f5-9
 1641660561904	Marionette	INFO	Listening on port 53049
 1641660562117	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript warning: https://static.geetest.com/static/js/fullpage.9.0.8.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1641660766324	Marionette	INFO	Stopped listening on port 53049
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
