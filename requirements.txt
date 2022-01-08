@@ -12,4 +12,5 @@ seaborn
 cv2module
 cv2box
 cv2-utils
+imageio-ffmpeg
 
