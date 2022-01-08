@@ -39,9 +39,9 @@ class Login_Pionex_Invest_On_Crypto:
       # enable trace level for debugging 
       options.log.level = "trace"
 
-      options.add_argument("-disable-dev-shm-usage")
+      options.add_argument("-remote-debugging-port=9224")
       options.add_argument("-headless")
-      #options.add_argument("-disable-gpu")
+      options.add_argument("-disable-gpu")
       options.add_argument("-no-sandbox")
 
       binary = FirefoxBinary(os.environ.get('FIREFOX_BIN'))
@@ -56,7 +56,7 @@ class Login_Pionex_Invest_On_Crypto:
     
     site="https://www.pionex.com/en-US/sign"
     self.driver = load_driver()
-    self.driver.get(site)
+	   self.driver.get(site)
     
     self.delay=30
     
