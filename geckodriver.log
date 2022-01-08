@@ -1,0 +1,24 @@
+1641660196556	geckodriver	INFO	Listening on 127.0.0.1:52748
+1641660199619	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "52749" "-no-remote" "-profile" "C:\\Users\\luca\\AppData\\Local\\Temp\\rust_mozprofileS2w8PA"
+1641660200195	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\luca\\AppData\\Local\\Temp\\rust_mozprofileS2w8PA\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52749/devtools/browser/faf8178e-6c7a-4130-9b33-f409a957feae
+1641660203059	Marionette	INFO	Listening on port 52755
+1641660203330	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://static.geetest.com/static/js/fullpage.9.0.8.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1641660434664	Marionette	INFO	Stopped listening on port 52755
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+e" "--remote-debugging-port" "52913" "-no-remote" "-profile" "C:\\Users\\luca\\AppData\\Local\\Temp\\rust_mozprofileSzIGM5"
+1641660434166	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\luca\\AppData\\Local\\Temp\\rust_mozprofileSzIGM5\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:52913/devtools/browser/385c36c0-a217-4bcb-a057-519fa01a76bf
+1641660437351	Marionette	INFO	Listening on port 52918
+1641660437567	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://static.geetest.com/static/js/fullpage.9.0.8.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1641660557028	Marionette	INFO	Stopped listening on port 52911641660558902	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "53043" "-no-remote" "-profile" "C:\\Users\\luca\\AppData\\Local\\Temp\\rust_mozprofile31QEUU"
+1641660559393	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\luca\\AppData\\Local\\Temp\\rust_mozprofile31QEUU\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53043/devtools/browser/8d356d59-d1e9-42f5-9685-0b5078e9a855
+1641660561904	Marionette	INFO	Listening on port 53049
+1641660562117	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://static.geetest.com/static/js/fullpage.9.0.8.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
