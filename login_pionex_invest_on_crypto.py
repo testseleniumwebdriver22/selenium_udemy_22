@@ -1,0 +1,189 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
+import datetime
+from PIL import Image
+from io import BytesIO
+import time
+from image_rec import Image_rec
+import numpy as np
+import scipy.interpolate as si
+import re
+import random
+
+
+class Login_Pionex_Invest_On_Crypto:
+
+  def __init__(self,crypto_name_to_invest,amount_to_invest):              
+    
+    site="https://www.pionex.com/en-US/sign"
+    self.delay=30
+    self.crypto_name_to_invest=crypto_name_to_invest
+    self.amount_to_invest=amount_to_invest
+    
+    self.driver = webdriver.Firefox()
+    self.driver.get(site)
+        
+    
+    self.driver.find_element_by_xpath("//*[contains(@class,'inputContainer___88mru')]//input[@placeholder='Phone number / Email']").send_keys("testseleniumwebdriver22@gmail.com")
+    
+    self.driver.find_element_by_xpath("//*[contains(@class,'inputContainer___88mru')]//input[@placeholder='Password']").send_keys("testselenium22")
+        
+    self.driver.find_element_by_xpath("//*[contains(@class,'ant-btn t-button signBtn___1i0eQ ant-btn-primary')]").click()
+    
+        
+    class_name="geetest_slider_button"
+    
+    try:
+                 myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
+                 print ("Slider is shown up!")
+                
+    except TimeoutException:
+                 print ("slider not coming up!")
+                
+  def update_cursor_position(self):
+      regex = re.compile(r'(\w*)px')
+      string=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_slider_button')]").get_attribute("style")
+      match = re.search(regex, string)
+      word = match.group(1)
+      self.current_slider_pos=int(word)
+      
+  def Invest_on_crypto(self):
+    time.sleep(5)
+    self.driver.find_element_by_xpath("//*[contains( text(), 'Market')]").click()
+    time.sleep(2)
+    self.driver.execute_script("document.getElementsByClassName('table-container___8a_Yd')[0].style.height='16850px';") 
+    self.driver.find_element_by_xpath("//*[contains(@class,'tableRow___w5YrW ')]//*[contains( text(), '"+self.crypto_name_to_invest+"')]").click() 
+    time.sleep(4)
+    self.driver.find_element_by_xpath("//*[contains(@id,'rc-tabs-1-tab-manual')]").click() 
+    time.sleep(3)
+    self.driver.find_element_by_xpath("//*[contains(@class,'container___155fZ')]//*[contains( text(), 'Market')]").click()
+    
+    self.driver.find_element_by_xpath("//*[contains(@class,'ant-input-number-input-wrap')]//input").send_keys(str(self.amount_to_invest)) 
+    self.driver.find_element_by_xpath("//*[contains(@class,'button-trading-up pionex-trading-up-bg')]").click() 
+
+  def attempt_login(self):  
+    
+    time.sleep(3)
+    element=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_canvas')]")
+    
+    location = element.location
+    size = element.size
+    png = self.driver.get_screenshot_as_png() # saves screenshot of entire page
+    
+    
+    im = Image.open(BytesIO(png)) # uses PIL library to open image in memory
+    
+    left = location['x']
+    top = location['y']
+    right = location['x'] + size['width']
+    bottom = location['y'] + size['height']
+    
+    
+    im = im.crop((left, top, right, bottom)) # defines crop points
+    im.save('screenshot.png') # saves new cropped image
+    
+    
+   ####################################################################################################################################################  
+  
+    img_rec=Image_rec()
+      
+    slide_amount=img_rec.get_slide_quantity()    
+         
+    i=slide_amount/5
+       
+    element=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_slider_button')]")
+
+    correction=0
+    def slider_movement(correction): 
+     time.sleep(2)
+     j=0
+     self.update_cursor_position()
+     while(self.current_slider_pos<slide_amount): 
+        
+        print("slide amount"+str(slide_amount))
+        print("i= "+str(i))
+    
+        if slide_amount-self.current_slider_pos>=i:
+            element=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_slider_button')]")
+            action = webdriver.ActionChains(self.driver)
+            element_locating=action.move_to_element(element)
+            element_clicked=element_locating.click_and_hold()
+            element_clicked.move_by_offset(i, 10).perform()
+            
+            self.update_cursor_position()
+            print("current slider pos after i movement"+str(self.current_slider_pos))
+            if(slide_amount%i==0):
+             j=j+1
+            if(j==5):
+                element_locating.reset_actions()
+                
+           
+        
+        if slide_amount-self.current_slider_pos<i:
+                  
+                  self.update_cursor_position()
+                  element2=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_slider_button')]")
+                  webdriver.ActionChains(self.driver).move_to_element(element2).click_and_hold().move_by_offset(int(slide_amount)-self.current_slider_pos+1+correction, 10).release().perform()
+                                
+                  print("slide_amount-self.current_slider_pos= "+str(type(slide_amount-self.current_slider_pos)))
+                                    
+                  element_locating.reset_actions()
+                  
+                  self.update_cursor_position()
+                  print("current slider pos after a very small movement"+str(self.current_slider_pos))
+                  
+                  class_name="tradeContainer___22DCk"
+                  
+                  
+                  try:
+                               myElem = WebDriverWait(self.driver, 1).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
+                              
+                  except TimeoutException:
+                               print ("slider movement not correct, retrying with different values..")
+                               self.delay=50
+                               correction=9+correction
+                               slider_movement(correction)
+                  
+                  
+        
+        time.sleep(random.uniform(1.534,2.3423))
+    
+    
+    slider_movement(correction)          
+                            
+
+    class_name="tradeContainer___22DCk"
+    
+    
+    try:
+                 myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
+                 print ("Login success!")
+                 self.Invest_on_crypto()
+            
+                
+    except TimeoutException:
+                 print ("Login not success, retrying..")
+                 #self.driver.find_element_by_xpath("//*[contains(@class,'geetest_refresh_1')]").click()
+                 #self.attempt_login()
+                 self.driver.close()
+                 login_pionex2=Login_Pionex_Invest_On_Crypto(self.crypto_name_to_invest,self.amount_to_invest)
+                 login_pionex2.attempt_login()
+
+  def driver_close(self):
+    self.driver.close()               
+
+  
+    
+    
+
+
