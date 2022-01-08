@@ -9,9 +9,4 @@ opencv-python
 imageio==2.13.5
 pandas
 seaborn
-cv2module
-cv2box
-cv2-utils
-imageio-ffmpeg
-libsm6
-libxext6
+
