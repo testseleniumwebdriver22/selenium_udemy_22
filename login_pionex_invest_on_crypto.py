@@ -133,8 +133,11 @@ class Login_Pionex_Invest_On_Crypto:
     img_rec=Image_rec()
       
     slide_amount=img_rec.get_slide_quantity()    
-         
-    i=slide_amount/5
+    for k in range(7):
+     
+     if slide_amount%k==0:
+       i=slide_amount/k
+       number_of_movements=k
        
     element=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_slider_button')]")
 
@@ -159,23 +162,23 @@ class Login_Pionex_Invest_On_Crypto:
             print("current slider pos after i movement"+str(self.current_slider_pos))
             if(slide_amount%i==0):
              j=j+1
-            if(j==5):
+            if(j==number_of_movements):
                 element_locating.reset_actions()
                 
            
         
-        if slide_amount-self.current_slider_pos<i:
+        # if slide_amount-self.current_slider_pos<i:
                   
-                  self.update_cursor_position()
-                  #element2=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_slider_button')]")
-                  webdriver.ActionChains(self.driver).move_to_element(element).click_and_hold().move_by_offset(int(slide_amount)-self.current_slider_pos+correction, 10).release().perform()
+        #           self.update_cursor_position()
+        #           #element2=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_slider_button')]")
+        #           webdriver.ActionChains(self.driver).move_to_element(element).click_and_hold().move_by_offset(int(slide_amount)-self.current_slider_pos+correction, 10).release().perform()
                                 
-                  print("slide_amount-self.current_slider_pos= "+str(type(slide_amount-self.current_slider_pos)))
+        #           print("slide_amount-self.current_slider_pos= "+str(type(slide_amount-self.current_slider_pos)))
                                     
-                  element_locating.reset_actions()
+        #           element_locating.reset_actions()
                   
-                  self.update_cursor_position()
-                  print("current slider pos after a very small movement"+str(self.current_slider_pos))
+        #           self.update_cursor_position()
+        #           print("current slider pos after a very small movement"+str(self.current_slider_pos))
                   
                   
                   
