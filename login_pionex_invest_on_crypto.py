@@ -230,9 +230,10 @@ class Login_Pionex_Invest_On_Crypto:
     get_emailsobj=Get_Emails()
     self.verification_code=get_emailsobj.get_verification_code()
     self.driver.find_element_by_xpath("//*//input").send_keys(str(self.verification_code))
-    self.save_screenshot()
     self.driver.find_element_by_xpath("//*//button").click()
+    self.save_screenshot()
     print("login success! verification code correctly inserted")
+    self.save_screenshot()
     self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]").click()
     print("cancel button clicked")
     # try:
