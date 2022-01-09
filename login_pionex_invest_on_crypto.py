@@ -90,7 +90,13 @@ class Login_Pionex_Invest_On_Crypto:
                 
 
   def get_and_insert_verification_code(self):
-                time.sleep(3)
+                try:
+                 myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.XPATH,"//*[contains( text(), 'CONFIRM')]")))
+                 print ("verification code requested")
+                
+                except TimeoutException:
+                  print ("verification code window not shown up")
+    
                 get_emailsobj=Get_Emails()
                 self.verification_code=get_emailsobj.get_verification_code()
                 print("verification code is: "+self.verification_code+"F")
@@ -248,7 +254,7 @@ class Login_Pionex_Invest_On_Crypto:
     self.save_screenshot()
     
     print("waiting for the verification code ..")
-    time.sleep(10)
+    
     self.get_and_insert_verification_code()
     # try:
     #              myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
