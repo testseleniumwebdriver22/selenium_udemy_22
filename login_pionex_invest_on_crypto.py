@@ -95,7 +95,7 @@ class Login_Pionex_Invest_On_Crypto:
                 self.save_screenshot()
                 print("verification code is: "+self.verification_code)
                 #self.driver.find_element_by_xpath("//*//input").send_keys(str(self.verification_code))
-                self.driver.find_element_by_xpath("//*[contains( text(), 'input')]").click()
+                self.driver.find_element_by_xpath("//*[contains( text(), 'input')]").send_keys(str(self.verification_code))
                 self.save_screenshot()
                 time.sleep(2)
                 self.driver.find_element_by_xpath("//*[contains( text(), 'CONFIRM')]").click()
