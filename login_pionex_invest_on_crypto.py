@@ -85,6 +85,7 @@ class Login_Pionex_Invest_On_Crypto:
                 
     except TimeoutException:
                 print ("slider not coming up, intelligent verification not required!")
+                time.sleep(20)
                 self.get_and_insert_verification_code()
                 
 
