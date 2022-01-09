@@ -224,7 +224,7 @@ class Login_Pionex_Invest_On_Crypto:
         
     self.save_screenshot()
     
-    self.driver.find_element_by_xpath("//*input")
+    self.driver.find_element_by_xpath("//*//input")
     print("waiting for the verification code ..")
     time.sleep(30)
     get_emailsobj=Get_Emails()
