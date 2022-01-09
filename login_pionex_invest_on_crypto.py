@@ -85,7 +85,7 @@ class Login_Pionex_Invest_On_Crypto:
                 
     except TimeoutException:
                 print ("slider not coming up, intelligent verification not required!")
-                time.sleep(21)
+                time.sleep(15)
                 self.get_and_insert_verification_code()
                 
 
@@ -246,9 +246,8 @@ class Login_Pionex_Invest_On_Crypto:
         
     self.save_screenshot()
     
-    self.driver.find_element_by_xpath("//*//input")
     print("waiting for the verification code ..")
-    time.sleep(30)
+    time.sleep(15)
     self.get_and_insert_verification_code()
     # try:
     #              myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
