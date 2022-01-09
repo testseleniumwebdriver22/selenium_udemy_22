@@ -229,7 +229,7 @@ class Login_Pionex_Invest_On_Crypto:
     time.sleep(30)
     get_emailsobj=Get_Emails()
     self.verification_code=get_emailsobj.get_verification_code()
-    self.driver.find_element_by_xpath("//*input").send_keys(str(self.verification_code))
+    self.driver.find_element_by_xpath("//*//input").send_keys(str(self.verification_code))
     self.save_screenshot()
     self.driver.find_element_by_xpath("//*[contains( text(), 'Confirm')]").click()
     print("login success! verification code correctly inserted")
