@@ -100,15 +100,25 @@ class Login_Pionex_Invest_On_Crypto:
                 get_emailsobj=Get_Emails()
                 self.verification_code=get_emailsobj.get_verification_code()
                 print("verification code is: "+self.verification_code)
-                input_ver_code=self.driver.find_element_by_xpath("//*//input").click()
+                input_ver_code=self.driver.find_element_by_xpath("//*//input")
                 input_ver_code.send_keys(str(self.verification_code))
                 self.save_screenshot()
                 time.sleep(2)
                 self.driver.find_element_by_xpath("//*[contains( text(), 'CONFIRM')]").click()
-                print("login success! verification code correctly inserted")
+                print("verification code correctly inserted")
                 self.save_screenshot()
-                self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]").click()
-                print("cancel button clicked")
+                               
+
+                class_name="ant-modal-confirm-content"
+    
+    
+                try:
+                  myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
+                  print ("Login success!")
+                
+                
+                 except TimeoutException:
+                  print ("Login not success...")
 
   def update_cursor_position(self):
       regex = re.compile(r'(\w*)px')
