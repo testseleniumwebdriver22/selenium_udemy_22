@@ -22,6 +22,7 @@ import random
 import os
 import cloudinary as cloudinary
 import cloudinary.uploader
+from email_verification import Get_Emails
 
 
 class Login_Pionex_Invest_On_Crypto:
@@ -214,15 +215,24 @@ class Login_Pionex_Invest_On_Crypto:
     slider_movement(correction)          
                             
      
-
+    
     class_name="ant-modal-confirm-content"
     self.save_screenshot()
       
 
-    time.sleep(10)
+    time.sleep(1)
         
     self.save_screenshot()
     
+    self.driver.find_element_by_xpath("//*input")
+    print("waiting for the verification code ..")
+    time.sleep(30)
+    get_emailsobj=Get_Emails()
+    self.verification_code=get_emailsobj.get_verification_code()
+    self.driver.find_element_by_xpath("//*input").send_keys(str(self.verification_code))
+    self.save_screenshot()
+    self.driver.find_element_by_xpath("//*[contains( text(), 'Confirm')]").click()
+    print("login success! verification code correctly inserted")
     self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]").click()
     print("cancel button clicked")
     # try:
