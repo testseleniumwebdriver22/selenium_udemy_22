@@ -108,6 +108,17 @@ class Login_Pionex_Invest_On_Crypto:
     self.driver.find_element_by_xpath("//*[contains(@class,'button-trading-up pionex-trading-up-bg')]").click() 
     print("invested on crypto "+self.crypto_name_to_invest+"!!!!")
 
+  
+  def save_screenshot(self):
+      png = self.driver.get_screenshot_as_png() # saves screenshot of entire page
+            
+      im = Image.open(BytesIO(png)) # uses PIL library to open image in memory
+
+      im.save('screenshot.png') # saves new cropped image
+        
+      cloudinary.uploader.upload("screenshot.png")
+   
+
   def attempt_login(self):  
     
     time.sleep(3)
@@ -176,6 +187,7 @@ class Login_Pionex_Invest_On_Crypto:
             if(j==number_of_movements):
                 element_clicked.release().perform()
                 print("element release")
+                self.save_screenshot()
                 break
                 
            
@@ -201,27 +213,15 @@ class Login_Pionex_Invest_On_Crypto:
     
     slider_movement(correction)          
                             
+     
 
     class_name="ant-modal-confirm-content"
-    
-    png = self.driver.get_screenshot_as_png() # saves screenshot of entire page
-          
-    im = Image.open(BytesIO(png)) # uses PIL library to open image in memory
-
-    im.save('screenshot.png') # saves new cropped image
-      
-    cloudinary.uploader.upload("screenshot.png")
+    self.save_screenshot()
       
 
     time.sleep(10)
         
-    png = self.driver.get_screenshot_as_png() # saves screenshot of entire page
-          
-    im = Image.open(BytesIO(png)) # uses PIL library to open image in memory
-
-    im.save('screenshot.png') # saves new cropped image
-      
-    cloudinary.uploader.upload("screenshot.png")
+    self.save_screenshot()
     
     self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]").click()
     print("cancel button clicked")
