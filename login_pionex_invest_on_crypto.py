@@ -214,9 +214,7 @@ class Login_Pionex_Invest_On_Crypto:
       
 
     time.sleep(10)
-    self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]").click()
-    print("cancel button clicked")
-    
+        
     png = self.driver.get_screenshot_as_png() # saves screenshot of entire page
           
     im = Image.open(BytesIO(png)) # uses PIL library to open image in memory
@@ -225,6 +223,8 @@ class Login_Pionex_Invest_On_Crypto:
       
     cloudinary.uploader.upload("screenshot.png")
     
+    self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]").click()
+    print("cancel button clicked")
     # try:
     #              myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
     #              print ("Login success!")
