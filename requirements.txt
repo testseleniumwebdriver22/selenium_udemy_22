@@ -8,5 +8,9 @@ numpy
 opencv-python
 imageio==2.13.5
 cloudinary
+google-api-python-client
+google-auth-httplib2 
+google-auth-oauthlib
+beautifulsoup4
 
 
