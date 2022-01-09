@@ -99,8 +99,8 @@ class Get_Emails:
      word = match.group(1)
      return word
 
-get_emailsobj=Get_Emails()
-print("the code is: "+get_emailsobj.get_verification_code())
+#get_emailsobj=Get_Emails()
+#print("the code is: "+get_emailsobj.get_verification_code())
 
   
 
