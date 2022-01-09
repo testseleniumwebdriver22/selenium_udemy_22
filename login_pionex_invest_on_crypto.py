@@ -91,7 +91,7 @@ class Login_Pionex_Invest_On_Crypto:
 
   def get_and_insert_verification_code(self):
                 try:
-                 myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.XPATH,"//*[contains( text(), 'CONFIRM')]")))
+                 myElem = WebDriverWait(self.driver, 100).until(EC.presence_of_element_located((By.XPATH,"//*[contains( text(), 'CONFIRM')]")))
                  print ("verification code requested")
                 
                 except TimeoutException:
@@ -99,7 +99,7 @@ class Login_Pionex_Invest_On_Crypto:
     
                 get_emailsobj=Get_Emails()
                 self.verification_code=get_emailsobj.get_verification_code()
-                print("verification code is: "+self.verification_code+"F")
+                print("verification code is: "+self.verification_code)
                 input_ver_code=self.driver.find_element_by_xpath("//*//input").click()
                 input_ver_code.send_keys(str(self.verification_code))
                 self.save_screenshot()
