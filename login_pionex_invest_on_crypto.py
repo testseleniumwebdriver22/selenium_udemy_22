@@ -21,6 +21,7 @@ import re
 import random
 import os
 import cloudinary as cloudinary
+import cloudinary.uploader
 
 
 class Login_Pionex_Invest_On_Crypto:
