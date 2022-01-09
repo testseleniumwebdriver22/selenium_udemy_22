@@ -144,7 +144,7 @@ class Login_Pionex_Invest_On_Crypto:
     img_rec=Image_rec()
       
     slide_amount=img_rec.get_slide_quantity()    
-    for k in range(7):
+    for k in range(1,7):
      
      if slide_amount%k==0:
        i=slide_amount/k
