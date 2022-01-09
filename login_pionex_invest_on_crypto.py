@@ -84,8 +84,21 @@ class Login_Pionex_Invest_On_Crypto:
                  print ("Slider is shown up!")
                 
     except TimeoutException:
-                 print ("slider not coming up!")
+                print ("slider not coming up, intelligent verification not required!")
+                self.get_and_insert_verification_code()
                 
+
+  def get_and_insert_verification_code(self):
+                get_emailsobj=Get_Emails()
+                self.verification_code=get_emailsobj.get_verification_code()
+                self.driver.find_element_by_xpath("//*//input").send_keys(str(self.verification_code))
+                self.driver.find_element_by_xpath("//*//button").click()
+                self.save_screenshot()
+                print("login success! verification code correctly inserted")
+                self.save_screenshot()
+                self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]").click()
+                print("cancel button clicked")
+
   def update_cursor_position(self):
       regex = re.compile(r'(\w*)px')
       string=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_slider_button')]").get_attribute("style")
@@ -227,15 +240,7 @@ class Login_Pionex_Invest_On_Crypto:
     self.driver.find_element_by_xpath("//*//input")
     print("waiting for the verification code ..")
     time.sleep(30)
-    get_emailsobj=Get_Emails()
-    self.verification_code=get_emailsobj.get_verification_code()
-    self.driver.find_element_by_xpath("//*//input").send_keys(str(self.verification_code))
-    self.driver.find_element_by_xpath("//*//button").click()
-    self.save_screenshot()
-    print("login success! verification code correctly inserted")
-    self.save_screenshot()
-    self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]").click()
-    print("cancel button clicked")
+    self.get_and_insert_verification_code()
     # try:
     #              myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
     #              print ("Login success!")
