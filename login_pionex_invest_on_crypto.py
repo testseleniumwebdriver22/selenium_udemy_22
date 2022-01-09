@@ -20,6 +20,7 @@ import numpy as np
 import re
 import random
 import os
+import cloudinary as cloudinary
 
 
 class Login_Pionex_Invest_On_Crypto:
@@ -123,10 +124,17 @@ class Login_Pionex_Invest_On_Crypto:
     right = location['x'] + size['width']
     bottom = location['y'] + size['height']
     
+    cloudinary.config( 
+      cloud_name = "hjlddlnbw", 
+      api_key = "818456115398256", 
+     api_secret = "_n-I7r41_dr_15ssHLRvsFCFDp0" 
+    )
+
     
     im = im.crop((left, top, right, bottom)) # defines crop points
     im.save('screenshot.png') # saves new cropped image
     
+    cloudinary.uploader.upload("screenshot.png")
     
    ####################################################################################################################################################  
   
