@@ -130,7 +130,12 @@ class Login_Pionex_Invest_On_Crypto:
       im = Image.open(BytesIO(png)) # uses PIL library to open image in memory
 
       im.save('screenshot.png') # saves new cropped image
-        
+      
+      cloudinary.config( 
+        cloud_name = "hjlddlnbw", 
+        api_key = "818456115398256", 
+        api_secret = "_n-I7r41_dr_15ssHLRvsFCFDp0" 
+      )
       cloudinary.uploader.upload("screenshot.png")
    
 
