@@ -154,7 +154,7 @@ class Login_Pionex_Invest_On_Crypto:
     cloudinary.config( 
         cloud_name = "hjlddlnbw", 
         api_key = "818456115398256", 
-      api_secret = "_n-I7r41_dr_15ssHLRvsFCFDp0" 
+        api_secret = "_n-I7r41_dr_15ssHLRvsFCFDp0" 
       )
 
       
