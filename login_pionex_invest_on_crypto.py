@@ -112,32 +112,32 @@ class Login_Pionex_Invest_On_Crypto:
     
     time.sleep(3)
     element=self.driver.find_element_by_xpath("//*[contains(@class,'geetest_canvas')]")
-    def save_screenshot():
-      location = element.location
-      size = element.size
-      png = self.driver.get_screenshot_as_png() # saves screenshot of entire page
+    
+    location = element.location
+    size = element.size
+    png = self.driver.get_screenshot_as_png() # saves screenshot of entire page
       
       
-      im = Image.open(BytesIO(png)) # uses PIL library to open image in memory
+    im = Image.open(BytesIO(png)) # uses PIL library to open image in memory
+     
+    left = location['x']
+    top = location['y']
+    right = location['x'] + size['width']
+    bottom = location['y'] + size['height']
       
-      left = location['x']
-      top = location['y']
-      right = location['x'] + size['width']
-      bottom = location['y'] + size['height']
-      
-      cloudinary.config( 
+    cloudinary.config( 
         cloud_name = "hjlddlnbw", 
         api_key = "818456115398256", 
       api_secret = "_n-I7r41_dr_15ssHLRvsFCFDp0" 
       )
 
       
-      im = im.crop((left, top, right, bottom)) # defines crop points
-      im.save('screenshot.png') # saves new cropped image
+    im = im.crop((left, top, right, bottom)) # defines crop points
+    im.save('screenshot.png') # saves new cropped image
       
-      cloudinary.uploader.upload("screenshot.png")
+    cloudinary.uploader.upload("screenshot.png")
     
-    save_screenshot()
+    
     
    ####################################################################################################################################################  
   
@@ -203,11 +203,28 @@ class Login_Pionex_Invest_On_Crypto:
                             
 
     class_name="ant-modal-confirm-content"
-    save_screenshot()
+    
+    png = self.driver.get_screenshot_as_png() # saves screenshot of entire page
+          
+    im = Image.open(BytesIO(png)) # uses PIL library to open image in memory
+
+    im.save('screenshot.png') # saves new cropped image
+      
+    cloudinary.uploader.upload("screenshot.png")
+      
+
     time.sleep(10)
     self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]").click()
     print("cancel button clicked")
-    save_screenshot()
+    
+    png = self.driver.get_screenshot_as_png() # saves screenshot of entire page
+          
+    im = Image.open(BytesIO(png)) # uses PIL library to open image in memory
+
+    im.save('screenshot.png') # saves new cropped image
+      
+    cloudinary.uploader.upload("screenshot.png")
+    
     # try:
     #              myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
     #              print ("Login success!")
