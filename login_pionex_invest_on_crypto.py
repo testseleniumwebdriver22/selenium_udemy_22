@@ -247,7 +247,7 @@ class Login_Pionex_Invest_On_Crypto:
     self.save_screenshot()
     
     print("waiting for the verification code ..")
-    time.sleep(15)
+    time.sleep(45)
     self.get_and_insert_verification_code()
     # try:
     #              myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
