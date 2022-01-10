@@ -136,7 +136,9 @@ class Image_rec:
          self.lines_l_filtered_x_min=min(lines_l_filtered_x)
         
         
-    def get_slide_quantity(self):     
+    def get_slide_quantity(self): 
+        if self.lines_l_filtered_x_min>4:
+            self.lines_l_filtered_x_min=0    
         return self.lines_r_filtered_x_min-self.lines_l_filtered_x_min
         
 #obj=Image_rec()
