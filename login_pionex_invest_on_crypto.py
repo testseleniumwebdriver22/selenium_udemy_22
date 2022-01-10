@@ -101,7 +101,7 @@ class Login_Pionex_Invest_On_Crypto:
                 self.verification_code=get_emailsobj.get_verification_code()
                 print("verification code is: "+self.verification_code)
                 input_ver_code=self.driver.find_element_by_xpath("//*//input")
-                print(str(input_ver_code.get_atrribute("outerHTML")))
+                print(str(input_ver_code.get_attribute("outerHTML")))
                 input_ver_code.send_keys(str(self.verification_code))
                 #self.save_screenshot()
                 time.sleep(2)
