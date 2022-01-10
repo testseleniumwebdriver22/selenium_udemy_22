@@ -12,7 +12,7 @@ from apscheduler.schedulers.blocking import BlockingScheduler
 
 class MainTest():
  
- def __init__(self,incrementing_each_time,already_done):
+ def __init__(self):
 
         chrome_options = webdriver.ChromeOptions()
         chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
@@ -77,6 +77,4 @@ class MainTest():
         driver.close()
             
 if __name__ == "__main__":
-   incrementing_each_time=28
-   already_done=0
-   MainTest(incrementing_each_time,already_done)
+   MainTest()

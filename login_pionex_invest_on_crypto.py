@@ -35,31 +35,8 @@ class Login_Pionex_Invest_On_Crypto:
     chrome_options.add_argument("--no-sandbox")
     CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
     DATABASE_URI = os.environ.get("DATABASE_URL")
-
-    # def load_driver():
-    #   options = webdriver.FirefoxOptions()
-      
-    #   # enable trace level for debugging 
-    #   #options.log.level = "trace"
-
-    #   #options.add_argument("-remote-debugging-port=9224")
-    #   options.add_argument("-headless")
-    #   #options.add_argument("-disable-gpu")
-    #   #options.add_argument("-no-sandbox")
-
-    #   binary = FirefoxBinary(os.environ.get('FIREFOX_BIN'))
-
-    #   firefox_driver = webdriver.Firefox(
-    #     firefox_binary=binary,
-    #     executable_path=os.environ.get('GECKODRIVER_PATH'),
-    #     options=options)
-
-    #   return firefox_driver
-    
     
     site="https://www.pionex.com/en-US/sign"
-    # self.driver = load_driver()
-    # self.driver.get(site)
     
     self.delay=30
     
