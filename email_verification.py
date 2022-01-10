@@ -47,11 +47,11 @@ class Get_Emails:
     # result = service.users().messages().list(maxResults=200, userId='me').execute()
     messages = result.get('messages')
     
-    print(messages)
+    #print(messages)
     # messages is a list of dictionaries where each dictionary contains a message id.
     self.txt = service.users().messages().get(userId='me', id=messages[0]['id']).execute()
     print("\n\n\n\n\n\n")
-    print(self.txt)
+    #print(self.txt)
     self.string_to_idendify_code=self.txt['snippet']
     print(self.txt['snippet'])
     # iterate through all the messages
