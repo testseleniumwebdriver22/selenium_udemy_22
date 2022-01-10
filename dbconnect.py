@@ -9,11 +9,11 @@ class DbConnect:
   self.rows=[]
   self.limit_reached=0
   self.conn=psycopg2.connect(
-    database="d6kb86r00f9rno",
-    user="uyeseufvhzragg",
-    host="ec2-34-255-21-191.eu-west-1.compute.amazonaws.com",
+    database="dfr5ocrhcbndct",
+    user="hkjxgpqcjpyebg",
+    host="ec2-63-35-79-208.eu-west-1.compute.amazonaws.com",
     port="5432",
-    password="1e2901550a3614c56949eba40ea34df80b29d8febcbf67c048cd611850a3c9be"
+    password="ce24057af403eb0c7cf64b1ed6d5c98472bac7ef800ac4930c4d531112e1f3a0"
   )
   # Open a cursor to perform database operations
   self.cur = self.conn.cursor()
