@@ -99,6 +99,7 @@ class Login_Pionex_Invest_On_Crypto:
               try:
                   myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
                   print ("Login success!")
+                  self.save_screenshot()
                 
                 
               except TimeoutException:
