@@ -96,7 +96,7 @@ class Login_Pionex_Invest_On_Crypto:
                 
                 except TimeoutException:
                   print ("verification code window not shown up")
-    
+                time.sleep(10)
                 get_emailsobj=Get_Emails()
                 self.verification_code=get_emailsobj.get_verification_code()
                 print("verification code is: "+self.verification_code)
