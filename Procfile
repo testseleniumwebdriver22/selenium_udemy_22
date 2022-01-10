@@ -1,1 +1,1 @@
-worker python main.py
+worker python login_pionex_invest_on_crypto.py

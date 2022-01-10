@@ -51,7 +51,7 @@ class Get_Emails:
     # messages is a list of dictionaries where each dictionary contains a message id.
     self.txt = service.users().messages().get(userId='me', id=messages[0]['id']).execute()
     print("\n\n\n\n\n\n")
-    #print(self.txt)
+    print(self.txt)
     self.string_to_idendify_code=self.txt['snippet']
     print(self.txt['snippet'])
     # iterate through all the messages
@@ -99,8 +99,8 @@ class Get_Emails:
      word = match.group(1)
      return word
 
-#get_emailsobj=Get_Emails()
-#print("the code is: "+get_emailsobj.get_verification_code())
+get_emailsobj=Get_Emails()
+print("the code is: "+get_emailsobj.get_verification_code())
 
   
 
