@@ -105,7 +105,7 @@ class Login_Pionex_Invest_On_Crypto:
                 input_ver_code.send_keys(str(self.verification_code))
                 #self.save_screenshot()
                 time.sleep(2)
-                #self.driver.find_element_by_xpath("//*[contains( text(), 'CONFIRM')]").click()
+                self.driver.find_element_by_xpath("//*[contains( text(), 'CONFIRM')]").get_attribute("outerHTML")
                 print("verification code correctly inserted")
                 self.save_screenshot()
                                
