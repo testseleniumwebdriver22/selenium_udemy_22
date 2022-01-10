@@ -264,7 +264,7 @@ class Login_Pionex_Invest_On_Crypto:
     self.save_screenshot()
       
 
-    time.sleep(1)
+    time.sleep(2)
         
     self.save_screenshot()
     
