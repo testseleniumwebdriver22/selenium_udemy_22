@@ -67,12 +67,10 @@ class Login_Pionex_Invest_On_Crypto:
                 
 
   def get_and_insert_verification_code(self):
-                try:
-                 myElem = WebDriverWait(self.driver, 100).until(EC.presence_of_element_located((By.XPATH,"//*[contains( text(), 'CONFIRM')]")))
+              try:
+                myElem = WebDriverWait(self.driver, 100).until(EC.presence_of_element_located((By.XPATH,"//*[contains( text(), 'CONFIRM')]")))
                  print ("verification code requested")
-                
-                except TimeoutException:
-                  print ("verification code window not shown up")
+
                 time.sleep(10)
                 get_emailsobj=Get_Emails()
                 self.verification_code=get_emailsobj.get_verification_code()
@@ -89,6 +87,10 @@ class Login_Pionex_Invest_On_Crypto:
                 print("verification code confirmed")
                 time.sleep(3)
                 self.save_screenshot()
+                
+                
+                except TimeoutException:
+                  print ("verification code window not shown up")
                            
 
                 class_name="ant-modal-confirm-content"
