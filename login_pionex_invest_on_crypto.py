@@ -105,10 +105,13 @@ class Login_Pionex_Invest_On_Crypto:
                 input_ver_code.send_keys(str(self.verification_code))
                 #self.save_screenshot()
                 time.sleep(2)
-                
+                 
                 print("verification code correctly inserted")
                 self.save_screenshot()
-                               
+                self.driver.find_element_by_xpath("//*[contains( text(), 'CONFIRM')]").click()
+                print("verification code confirmed")
+                self.save_screenshot()
+                           
 
                 class_name="ant-modal-confirm-content"
     
