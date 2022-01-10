@@ -247,7 +247,6 @@ class Login_Pionex_Invest_On_Crypto:
         
     self.save_screenshot()
     
-    print("waiting for the verification code ..")
     
     self.get_and_insert_verification_code()
     # try:
