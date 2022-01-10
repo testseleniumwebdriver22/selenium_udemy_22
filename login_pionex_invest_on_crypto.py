@@ -110,6 +110,7 @@ class Login_Pionex_Invest_On_Crypto:
                 self.save_screenshot()
                 self.driver.find_element_by_xpath("//*[contains( text(), 'CONFIRM')]").click()
                 print("verification code confirmed")
+                time.sleep(3)
                 self.save_screenshot()
                            
 
