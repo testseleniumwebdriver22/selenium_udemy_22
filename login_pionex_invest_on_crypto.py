@@ -68,7 +68,7 @@ class Login_Pionex_Invest_On_Crypto:
 
   def get_and_insert_verification_code(self):
               try:
-                myElem = WebDriverWait(self.driver, 100).until(EC.presence_of_element_located((By.XPATH,"//*[contains( text(), 'CONFIRM')]")))
+                myElem = WebDriverWait(self.driver, 25).until(EC.presence_of_element_located((By.XPATH,"//*[contains( text(), 'CONFIRM')]")))
                 print ("verification code requested")
 
                 time.sleep(10)
