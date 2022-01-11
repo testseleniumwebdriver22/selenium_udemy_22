@@ -66,7 +66,7 @@ class Login_Pionex_Invest_On_Crypto:
                 self.get_and_insert_verification_code()
                 
 
-  def get_and_insert_verification_code(self):
+  def get_and_insert_eventual_verification_code(self):
               try:
                 myElem = WebDriverWait(self.driver, 25).until(EC.presence_of_element_located((By.XPATH,"//*[contains( text(), 'CONFIRM')]")))
                 print ("verification code requested")
@@ -105,7 +105,11 @@ class Login_Pionex_Invest_On_Crypto:
                 
                 
               except TimeoutException:
-                  print ("Login not success...")
+                  print ("Login not success...retrying")
+                  self.driver.close()
+                  login_pionex2=Login_Pionex_Invest_On_Crypto(self.crypto_name_to_invest,self.amount_to_invest)
+                  login_pionex2.attempt_login()
+
 
   def update_cursor_position(self):
       regex = re.compile(r'(\w*)px')
@@ -254,7 +258,7 @@ class Login_Pionex_Invest_On_Crypto:
     self.save_screenshot()
     
     
-    self.get_and_insert_verification_code()
+    self.get_and_insert_eventual_verification_code()
     # try:
     #              myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
     #              print ("Login success!")
