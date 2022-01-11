@@ -94,7 +94,10 @@ class DbConnect:
                           print("entereeeeeeeeeed") 
                           
                           string_to_send="\n new local minimum detected!!----------crypto: "+crypto_name+" current value is "+str(self.rows_current[-constant][0])+"\n previous value was "+str(self.rows[-constant][0])+"\n at timestamp: "+str(self.rows[-constant][1])
-                           
+
+                          login_pionex=Login_Pionex_Invest_On_Crypto(crypto_name,22)
+                          login_pionex.attempt_login()
+                          login_pionex.driver_close() 
                           Bullet(string_to_send)
                  
 
