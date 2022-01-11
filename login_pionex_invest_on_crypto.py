@@ -99,7 +99,9 @@ class Login_Pionex_Invest_On_Crypto:
               try:
                   myElem = WebDriverWait(self.driver, self.delay).until(EC.presence_of_element_located((By.CLASS_NAME,class_name)))
                   print ("Login success!")
+                  self.Invest_on_crypto()
                   self.save_screenshot()
+
                 
                 
               except TimeoutException:
@@ -114,6 +116,8 @@ class Login_Pionex_Invest_On_Crypto:
       
   def Invest_on_crypto(self):
     time.sleep(5)
+    self.driver.find_element_by_xpath("//*[contains( text(), 'Cancel')]").click()
+    print("identity verification window bypassed ( cancel button pressed)... ")
     self.driver.find_element_by_xpath("//*[contains( text(), 'Market')]").click()
     print("investment phase is beginning....")
     time.sleep(2)
@@ -124,7 +128,8 @@ class Login_Pionex_Invest_On_Crypto:
     time.sleep(3)
     self.driver.find_element_by_xpath("//*[contains(@class,'container___155fZ')]//*[contains( text(), 'Market')]").click()
     
-    self.driver.find_element_by_xpath("//*[contains(@class,'ant-input-number-input-wrap')]//input").send_keys(str(self.amount_to_invest)) 
+    self.driver.find_element_by_xpath("//*[contains(@class,'ant-input-number-input-wrap')]//input").send_keys(str(self.amount_to_invest))
+    self 
     self.driver.find_element_by_xpath("//*[contains(@class,'button-trading-up pionex-trading-up-bg')]").click() 
     print("invested on crypto "+self.crypto_name_to_invest+"!!!!")
 
