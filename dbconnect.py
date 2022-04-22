@@ -10,10 +10,10 @@ class DbConnect:
   self.limit_reached=0
   self.conn=psycopg2.connect(
     database="dfr5ocrhcbndct",
-    user="hkjxgpqcjpyebg",
-    host="ec2-63-35-79-208.eu-west-1.compute.amazonaws.com",
+    user="ersujyiikclnyl",
+    host="ec2-176-34-168-83.eu-west-1.compute.amazonaws.com",
     port="5432",
-    password="ce24057af403eb0c7cf64b1ed6d5c98472bac7ef800ac4930c4d531112e1f3a0"
+    password="121e7a6f972a174dfab225f7e112046b7dd894aa5364a5aa0ac4d7cdee2b5eca"
   )
   # Open a cursor to perform database operations
   self.cur = self.conn.cursor()
@@ -88,7 +88,7 @@ class DbConnect:
      if len(self.rows)>2:
       if len(self.rows_current)>1:
          if (self.rows_current[-1][0]>0.150):
-              if (((self.rows_current[-constant][0]-self.rows[-1][0])/self.rows_current[-constant][0])<0.36):
+              if (((self.rows_current[-constant][0]-self.rows[-1][0])/self.rows_current[-constant][0])<0.125):
                          if (self.rows_current[-1][1]-self.rows[-constant][1])>datetime.timedelta(seconds=13000):   
                           
                           print("entereeeeeeeeeed") 
