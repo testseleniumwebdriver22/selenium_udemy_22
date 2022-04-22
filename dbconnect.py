@@ -87,8 +87,8 @@ class DbConnect:
        
      if len(self.rows)>2:
       if len(self.rows_current)>1:
-         if (self.rows_current[-1][0]>0.130):
-              if (((self.rows_current[-constant][0]-self.rows[-1][0])/self.rows_current[-constant][0])>0.08):
+         if (self.rows_current[-1][0]>0.150):
+              if (((self.rows_current[-constant][0]-self.rows[-1][0])/self.rows_current[-constant][0])<0.36):
                          if (self.rows_current[-1][1]-self.rows[-constant][1])>datetime.timedelta(seconds=13000):   
                           
                           print("entereeeeeeeeeed") 
